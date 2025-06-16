@@ -1,0 +1,94 @@
+{
+  "info": {
+    "_postman_id": "b1e1e1e1-1111-2222-3333-444444444444",
+    "name": "Restaurante System - Usuários",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Coleção de testes para a API de gerenciamento de usuários."
+  },
+  "item": [
+    {
+      "name": "Cadastrar Usuário",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Administrador\",\n  \"email\": \"admin@exemplo.com\",\n  \"login\": \"admin\",\n  \"senha\": \"1234\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/usuarios",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["usuarios"]
+        }
+      }
+    },
+    {
+      "name": "Listar Usuários",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/usuarios",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["usuarios"]
+        }
+      }
+    },
+    {
+      "name": "Atualizar Usuário",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Novo Nome\",\n  \"email\": \"novo@email.com\",\n  \"login\": \"novoLogin\",\n  \"senha\": \"novaSenha\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/usuarios/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["usuarios", "1"]
+        }
+      }
+    },
+    {
+      "name": "Excluir Usuário",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/usuarios/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["usuarios", "1"]
+        }
+      }
+    },
+    {
+      "name": "Login Usuário",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8080/usuarios/login?login=admin&senha=1234",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["usuarios", "login"],
+          "query": [
+            { "key": "login", "value": "admin" },
+            { "key": "senha", "value": "1234" }
+          ]
+        }
+      }
+    }
+  ]
+}
+
