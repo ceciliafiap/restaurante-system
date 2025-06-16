@@ -40,7 +40,7 @@ public class UserController {
     public ResponseEntity<User> atualizar(@PathVariable Long id, @Valid @RequestBody User userAtualizado) {
         return repository.findById(id)
                 .map(user -> {
-                    user.setNome(userAtualizado.getNome());
+                    user.setName(userAtualizado.getName());
                     user.setEmail(userAtualizado.getEmail());
                     user.setLogin(userAtualizado.getLogin());
                     user.setSenha(userAtualizado.getSenha());
