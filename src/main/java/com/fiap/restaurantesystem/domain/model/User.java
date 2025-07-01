@@ -3,6 +3,7 @@ package com.fiap.restaurantesystem.domain.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDateTime;
 
@@ -14,19 +15,23 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Name is required")
+    @Size(min = 2, max = 100, message = "Name must be between 2 and 100 characters")
     private String name;
 
-    @NotBlank
-    @Email
+    @NotBlank(message = "Email is required")
+    @Email(message = "Email should be valid")
+    @Size(max = 100, message = "Email must be at most 100 characters")
     @Column(unique = true)
     private String email;
 
-    @NotBlank
+    @NotBlank(message = "Login is required")
+    @Size(min = 4, max = 50, message = "Login must be between 4 and 50 characters")
     @Column(unique = true)
     private String login;
 
-    @NotBlank
+    @NotBlank(message = "Password is required")
+    @Size(min = 6, max = 100, message = "Password must be between 6 and 100 characters")
     private String password;
 
     private LocalDateTime lastUpdate;
