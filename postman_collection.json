@@ -1,13 +1,13 @@
 {
   "info": {
     "_postman_id": "b1e1e1e1-1111-2222-3333-444444444444",
-    "name": "Restaurante System - Usuários",
+    "name": "Restaurant System - Users",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": "Coleção de testes para a API de gerenciamento de usuários."
+    "description": "Test collection for the user management API."
   },
   "item": [
     {
-      "name": "Cadastrar Usuário",
+      "name": "Create User",
       "request": {
         "method": "POST",
         "header": [
@@ -15,32 +15,32 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"nome\": \"Administrador\",\n  \"email\": \"admin@exemplo.com\",\n  \"login\": \"admin\",\n  \"senha\": \"1234\"\n}"
+          "raw": "{\n  \"name\": \"Administrator\",\n  \"email\": \"admin@example.com\",\n  \"login\": \"admin\",\n  \"password\": \"123456\"\n}"
         },
         "url": {
-          "raw": "http://localhost:8080/usuarios",
+          "raw": "http://localhost:8080/users",
           "protocol": "http",
           "host": ["localhost"],
           "port": "8080",
-          "path": ["usuarios"]
+          "path": ["users"]
         }
       }
     },
     {
-      "name": "Listar Usuários",
+      "name": "List Users",
       "request": {
         "method": "GET",
         "url": {
-          "raw": "http://localhost:8080/usuarios",
+          "raw": "http://localhost:8080/users",
           "protocol": "http",
           "host": ["localhost"],
           "port": "8080",
-          "path": ["usuarios"]
+          "path": ["users"]
         }
       }
     },
     {
-      "name": "Atualizar Usuário",
+      "name": "Update User",
       "request": {
         "method": "PUT",
         "header": [
@@ -48,47 +48,46 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"nome\": \"Novo Nome\",\n  \"email\": \"novo@email.com\",\n  \"login\": \"novoLogin\",\n  \"senha\": \"novaSenha\"\n}"
+          "raw": "{\n  \"name\": \"New Name\",\n  \"email\": \"new@email.com\",\n  \"login\": \"newLogin\",\n  \"password\": \"newPassword\"\n}"
         },
         "url": {
-          "raw": "http://localhost:8080/usuarios/1",
+          "raw": "http://localhost:8080/users/1",
           "protocol": "http",
           "host": ["localhost"],
           "port": "8080",
-          "path": ["usuarios", "1"]
+          "path": ["users", "1"]
         }
       }
     },
     {
-      "name": "Excluir Usuário",
+      "name": "Delete User",
       "request": {
         "method": "DELETE",
         "url": {
-          "raw": "http://localhost:8080/usuarios/1",
+          "raw": "http://localhost:8080/users/1",
           "protocol": "http",
           "host": ["localhost"],
           "port": "8080",
-          "path": ["usuarios", "1"]
+          "path": ["users", "1"]
         }
       }
     },
     {
-      "name": "Login Usuário",
+      "name": "User Login",
       "request": {
         "method": "POST",
         "url": {
-          "raw": "http://localhost:8080/usuarios/login?login=admin&senha=1234",
+          "raw": "http://localhost:8080/users/login?login=admin&password=123456",
           "protocol": "http",
           "host": ["localhost"],
           "port": "8080",
-          "path": ["usuarios", "login"],
+          "path": ["users", "login"],
           "query": [
             { "key": "login", "value": "admin" },
-            { "key": "senha", "value": "1234" }
+            { "key": "password", "value": "123456" }
           ]
         }
       }
     }
   ]
 }
-
