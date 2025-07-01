@@ -31,7 +31,7 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestParam String login, @RequestParam String password) {
         return repository.findByLogin(login)
-                .filter(u -> u.getSenha().equals(password))
+                .filter(u -> u.getPassword().equals(password))
                 .map(u -> ResponseEntity.ok("Login successful"))
                 .orElse(ResponseEntity.status(401).body("Invalid credentials"));
     }
@@ -43,7 +43,7 @@ public class UserController {
                     user.setName(updatedUser.getName());
                     user.setEmail(updatedUser.getEmail());
                     user.setLogin(updatedUser.getLogin());
-                    user.setSenha(updatedUser.getSenha());
+                    user.setPassword(updatedUser.getPassword());
                     User saved = repository.save(user);
                     return ResponseEntity.ok(saved);
                 })

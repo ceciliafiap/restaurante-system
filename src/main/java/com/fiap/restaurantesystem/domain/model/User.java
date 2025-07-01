@@ -27,14 +27,14 @@ public class User {
     private String login;
 
     @NotBlank
-    private String senha;
+    private String password;
 
-    private LocalDateTime ultimaAtualizacao;
+    private LocalDateTime lastUpdate;
 
     @PrePersist
     @PreUpdate
     public void preUpdate() {
-        ultimaAtualizacao = LocalDateTime.now();
+        lastUpdate = LocalDateTime.now();
     }
 
     public Long getId() {
@@ -69,19 +69,19 @@ public class User {
         this.login = login;
     }
 
-    public String getSenha() {
-        return this.senha;
+    public String getPassword() {
+        return this.password;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public LocalDateTime getUltimaAtualizacao() {
-        return ultimaAtualizacao;
+    public LocalDateTime getLastUpdate() {
+        return lastUpdate;
     }
 
-    public void setUltimaAtualizacao(LocalDateTime ultimaAtualizacao) {
-        this.ultimaAtualizacao = ultimaAtualizacao;
+    public void setLastUpdate(LocalDateTime lastUpdate) {
+        this.lastUpdate = lastUpdate;
     }
 }
