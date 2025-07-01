@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/usuarios")
+@RequestMapping("/users")
 public class UserController {
 
     private final UserRepository repository;
@@ -19,39 +19,39 @@ public class UserController {
     }
 
     @PostMapping
-    public User criar(@Valid @RequestBody User user) {
+    public User create(@Valid @RequestBody User user) {
         return repository.save(user);
     }
 
     @GetMapping
-    public List<User> listar() {
+    public List<User> list() {
         return repository.findAll();
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestParam String login, @RequestParam String senha) {
+    public ResponseEntity<String> login(@RequestParam String login, @RequestParam String password) {
         return repository.findByLogin(login)
-                .filter(u -> u.getSenha().equals(senha))
-                .map(u -> ResponseEntity.ok("Login bem-sucedido"))
-                .orElse(ResponseEntity.status(401).body("Credenciais inválidas"));
+                .filter(u -> u.getSenha().equals(password))
+                .map(u -> ResponseEntity.ok("Login successful"))
+                .orElse(ResponseEntity.status(401).body("Invalid credentials"));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> atualizar(@PathVariable Long id, @Valid @RequestBody User userAtualizado) {
+    public ResponseEntity<User> update(@PathVariable Long id, @Valid @RequestBody User updatedUser) {
         return repository.findById(id)
                 .map(user -> {
-                    user.setNome(userAtualizado.getNome());
-                    user.setEmail(userAtualizado.getEmail());
-                    user.setLogin(userAtualizado.getLogin());
-                    user.setSenha(userAtualizado.getSenha());
-                    User salvo = repository.save(user);
-                    return ResponseEntity.ok(salvo);
+                    user.setName(updatedUser.getName());
+                    user.setEmail(updatedUser.getEmail());
+                    user.setLogin(updatedUser.getLogin());
+                    user.setSenha(updatedUser.getSenha());
+                    User saved = repository.save(user);
+                    return ResponseEntity.ok(saved);
                 })
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         return repository.findById(id)
                 .map(user -> {
                     repository.delete(user);
