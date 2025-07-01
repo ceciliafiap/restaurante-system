@@ -36,6 +36,10 @@ public class User {
 
     private LocalDateTime lastUpdate;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
+    private Address address;
+
     @PrePersist
     @PreUpdate
     public void preUpdate() {
@@ -88,5 +92,13 @@ public class User {
 
     public void setLastUpdate(LocalDateTime lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

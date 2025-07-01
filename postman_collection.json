@@ -88,6 +88,138 @@
           ]
         }
       }
+    },
+    {
+      "name": "Create Client",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Client Example\",\n  \"email\": \"client@example.com\",\n  \"login\": \"client1\",\n  \"password\": \"123456\",\n  \"address\": {\n    \"street\": \"Rua das Flores\",\n    \"number\": \"123\",\n    \"city\": \"São Paulo\",\n    \"state\": \"SP\",\n    \"zipCode\": \"01234-567\",\n    \"complement\": \"Apto 10\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/clients",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["clients"]
+        }
+      }
+    },
+    {
+      "name": "List Clients",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/clients",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["clients"]
+        }
+      }
+    },
+    {
+      "name": "Update Client",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Updated Client\",\n  \"email\": \"updatedclient@example.com\",\n  \"login\": \"client1updated\",\n  \"password\": \"newpass\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/clients/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["clients", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Client",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/clients/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["clients", "1"]
+        }
+      }
+    },
+    {
+      "name": "Create Owner",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Owner Example\",\n  \"email\": \"owner@example.com\",\n  \"login\": \"owner1\",\n  \"password\": \"123456\",\n  \"address\": {\n    \"street\": \"Av. Paulista\",\n    \"number\": \"1000\",\n    \"city\": \"São Paulo\",\n    \"state\": \"SP\",\n    \"zipCode\": \"01310-100\",\n    \"complement\": \"Sala 101\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/owners",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["owners"]
+        }
+      }
+    },
+    {
+      "name": "List Owners",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/owners",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["owners"]
+        }
+      }
+    },
+    {
+      "name": "Update Owner",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Updated Owner\",\n  \"email\": \"updatedowner@example.com\",\n  \"login\": \"owner1updated\",\n  \"password\": \"newpass\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/owners/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["owners", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Owner",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/owners/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["owners", "1"]
+        }
+      }
     }
   ]
 }
