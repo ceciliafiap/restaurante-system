@@ -1,6 +1,6 @@
 package com.fiap.restaurantesystem.controller;
 
-import com.fiap.restaurantesystem.domain.model.Client;
+import com.fiap.restaurantesystem.domain.Client;
 import com.fiap.restaurantesystem.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

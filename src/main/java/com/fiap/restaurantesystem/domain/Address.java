@@ -1,4 +1,4 @@
-package com.fiap.restaurantesystem.domain.model;
+package com.fiap.restaurantesystem.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

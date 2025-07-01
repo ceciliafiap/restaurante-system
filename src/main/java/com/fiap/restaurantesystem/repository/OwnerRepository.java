@@ -1,6 +1,6 @@
 package com.fiap.restaurantesystem.repository;
 
-import com.fiap.restaurantesystem.domain.model.Owner;
+import com.fiap.restaurantesystem.domain.Owner;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OwnerRepository extends JpaRepository<Owner, Long> {

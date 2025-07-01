@@ -1,6 +1,6 @@
 package com.fiap.restaurantesystem.controller;
 
-import com.fiap.restaurantesystem.domain.model.User;
+import com.fiap.restaurantesystem.domain.User;
 import com.fiap.restaurantesystem.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

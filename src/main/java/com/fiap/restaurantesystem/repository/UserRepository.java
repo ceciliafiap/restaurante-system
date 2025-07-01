@@ -1,6 +1,6 @@
 package com.fiap.restaurantesystem.repository;
 
-import com.fiap.restaurantesystem.domain.model.User;
+import com.fiap.restaurantesystem.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

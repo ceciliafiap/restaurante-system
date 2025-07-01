@@ -1,6 +1,6 @@
 package com.fiap.restaurantesystem.repository;
 
-import com.fiap.restaurantesystem.domain.model.Client;
+import com.fiap.restaurantesystem.domain.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClientRepository extends JpaRepository<Client, Long> {

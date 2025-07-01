@@ -1,6 +1,6 @@
 package com.fiap.restaurantesystem.controller;
 
-import com.fiap.restaurantesystem.domain.model.User;
+import com.fiap.restaurantesystem.domain.User;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
