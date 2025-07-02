@@ -6,7 +6,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Etapa de execução
-FROM openjdk:21-jdk-slim
+FROM gcr.io/distroless/java21
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
