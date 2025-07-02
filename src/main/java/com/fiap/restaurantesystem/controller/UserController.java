@@ -1,5 +1,6 @@
 package com.fiap.restaurantesystem.controller;
 
+import com.fiap.restaurantesystem.controller.docs.UserApi;
 import com.fiap.restaurantesystem.domain.User;
 import com.fiap.restaurantesystem.repository.UserRepository;
 import jakarta.validation.Valid;

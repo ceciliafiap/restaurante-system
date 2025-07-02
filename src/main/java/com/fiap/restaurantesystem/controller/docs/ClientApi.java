@@ -1,4 +1,4 @@
-package com.fiap.restaurantesystem.controller;
+package com.fiap.restaurantesystem.controller.docs;
 
 import com.fiap.restaurantesystem.domain.Client;
 import io.swagger.v3.oas.annotations.Operation;
